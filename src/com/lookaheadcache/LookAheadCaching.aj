@@ -8,7 +8,7 @@ import com.sleepycat.je.tree.TreeLocation;
 
 import driver.Driver;
 
-public privileged aspect LookAheadCaching extends LookAheadCacheAbstract percflow(processFile(*))  {
+public privileged aspect LookAheadCaching extends LookAheadCacheAbstract {
 
 	pointcut driver() : if(new Driver().isActivated("lookAheadCache"));
 	

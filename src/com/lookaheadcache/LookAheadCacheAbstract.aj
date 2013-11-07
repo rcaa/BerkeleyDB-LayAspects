@@ -30,9 +30,6 @@ public privileged abstract aspect LookAheadCacheAbstract {
 	&& this(fp) && args(fileNum, trackedFileSummary, PackedOffsets.Iterator, numb, set, dbCache, cleanerFileReader, dbTree, location);
 	
 	pointcut envConfigUpdate(Cleaner c, DbConfigManager cm) : execution(void Cleaner.envConfigUpdate(DbConfigManager)) && args(cm) && this(c);
-	
-	pointcut processFile(FileProcessor fp):
-		execution(boolean FileProcessor.processFile(Long)) && this(fp);
 
 	void around(Long fileNum, TreeLocation location, Long offset, LNInfo info,
 			Map map, FileProcessor fp) throws DatabaseException:
